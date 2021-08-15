@@ -3,6 +3,7 @@ package com.example.springplaygroundnew.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
@@ -11,7 +12,8 @@ import java.util.List;
 @Data
 public class Author extends BasePerson {
     @JsonIgnore
-    @OneToMany
+//    @OneToMany
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
 //    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private List<Book> books;
 }

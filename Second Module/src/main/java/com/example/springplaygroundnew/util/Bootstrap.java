@@ -12,6 +12,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Component
@@ -106,8 +108,11 @@ public class Bootstrap implements CommandLineRunner {
 //        client3.setLibraries(Set.of(lib2));
 //
 //        //todo author.setBooks()
-//        pushkin.setBooks(Set.of(book1, book2));
-//        gogol.setBooks(Set.of(book3));
+//        List<Book> pBooks = new ArrayList<>();
+//        pBooks.add(book1);
+//        pBooks.add(book2);
+//        pushkin.setBooks(pBooks);
+//        gogol.setBooks(List.of(book3));
 //        tolstoy.setBooks(Set.of(book4, book5));
 //        dumas.setBooks(Set.of(book6, book7));
 //        //todo library.setBooks()
@@ -124,14 +129,14 @@ public class Bootstrap implements CommandLineRunner {
 //        libraryService.save(lib1);
 //        libraryService.save(lib2);
 
+//        clientService.save(client1);
+//        clientService.save(client2);
+//        clientService.save(client3);
+
         authorService.save(pushkin);
         authorService.save(gogol);
         authorService.save(tolstoy);
         authorService.save(dumas);
-
-//        clientService.save(client1);
-//        clientService.save(client2);
-//        clientService.save(client3);
 
         bookService.save(book1);
         bookService.save(book2);

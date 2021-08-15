@@ -3,10 +3,7 @@ package com.example.springplaygroundnew.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,7 +12,7 @@ public class Book extends BaseEntity {
 
 //    @JsonIgnore
     @ManyToOne
-//    @JoinColumn(name = "author_id", referencedColumnName = "id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
 //    @ManyToOne
 //    //todo check for column name
