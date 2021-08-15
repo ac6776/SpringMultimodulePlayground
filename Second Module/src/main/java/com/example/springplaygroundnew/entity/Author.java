@@ -12,5 +12,5 @@ import java.util.Set;
 public class Author extends BasePerson {
     @OneToMany
     @JoinColumn(name = "book_id", referencedColumnName = "id")
-    private Set<Book> book;
+    private Set<Book> books;
 }

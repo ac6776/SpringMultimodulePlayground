@@ -106,8 +106,20 @@ public class Bootstrap implements CommandLineRunner {
         client3.setLibraries(Set.of(lib2));
 
         //todo author.setBooks()
+        pushkin.setBooks(Set.of(book1, book2));
+        gogol.setBooks(Set.of(book3));
+        tolstoy.setBooks(Set.of(book4, book5));
+        dumas.setBooks(Set.of(book6, book7));
         //todo library.setBooks()
+        lib1.setBooks(Set.of(book1, book3, book6));
+        lib2.setBooks(Set.of(book2, book4, book5, book7));
         //todo library.setClients()
+        lib1.setClients(Set.of(client1, client2));
+        lib2.setClients(Set.of(client1, client3));
+        //todo client.setBooks()
+        client1.setBooks(Set.of(book1));
+        client2.setBooks(Set.of(book3));
+        client3.setBooks(Set.of(book5));
 
         libraryService.save(lib1);
         libraryService.save(lib2);
