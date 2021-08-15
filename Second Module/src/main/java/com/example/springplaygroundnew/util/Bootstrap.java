@@ -108,5 +108,26 @@ public class Bootstrap implements CommandLineRunner {
         //todo author.setBooks()
         //todo library.setBooks()
         //todo library.setClients()
+
+        libraryService.save(lib1);
+        libraryService.save(lib2);
+
+        authorService.save(pushkin);
+        authorService.save(gogol);
+        authorService.save(tolstoy);
+        authorService.save(dumas);
+
+        clientService.save(client1);
+        clientService.save(client2);
+        clientService.save(client3);
+
+        bookService.save(book1);
+        bookService.save(book2);
+        bookService.save(book3);
+        bookService.save(book4);
+        bookService.save(book5);
+        bookService.save(book6);
+        bookService.save(book7);
+
     }
 }
