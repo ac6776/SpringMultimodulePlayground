@@ -1,16 +1,17 @@
 package com.example.springplaygroundnew.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
 public class Author extends BasePerson {
+    @JsonIgnore
     @OneToMany
-    @JoinColumn(name = "book_id", referencedColumnName = "id")
-    private Set<Book> books;
+//    @JoinColumn(name = "book_id", referencedColumnName = "id")
+    private List<Book> books;
 }

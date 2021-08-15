@@ -27,6 +27,10 @@
 <!--            <version>1.4.200</version>-->
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
