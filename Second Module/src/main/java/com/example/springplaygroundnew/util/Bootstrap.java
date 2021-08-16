@@ -27,12 +27,12 @@ public class Bootstrap implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        //Libraries
-//        Library lib1 = new Library();
-//        lib1.setTitle("The Central Library");
-//
-//        Library lib2 = new Library();
-//        lib2.setTitle("The Second Library");
+        //Libraries
+        Library lib1 = new Library();
+        lib1.setTitle("The Central Library");
+
+        Library lib2 = new Library();
+        lib2.setTitle("The Second Library");
 
         //Authors
         Author pushkin = new Author();
@@ -51,57 +51,57 @@ public class Bootstrap implements CommandLineRunner {
         dumas.setFirstName("Alexandre");
         dumas.setLastName("Dumas");
 
-//        //Clients
-//        Client client1 = new Client();
-//        client1.setFirstName("John");
-//        client1.setLastName("Smith");
-//
-//        Client client2 = new Client();
-//        client2.setFirstName("Ivan");
-//        client2.setLastName("Ivanov");
-//
-//        Client client3 = new Client();
-//        client3.setFirstName("Natalya");
-//        client3.setLastName("Oreiro");
+        //Clients
+        Client client1 = new Client();
+        client1.setFirstName("John");
+        client1.setLastName("Smith");
+
+        Client client2 = new Client();
+        client2.setFirstName("Ivan");
+        client2.setLastName("Ivanov");
+
+        Client client3 = new Client();
+        client3.setFirstName("Natalya");
+        client3.setLastName("Oreiro");
 
         //Books
         Book book1 = new Book();
         book1.setTitle("Evgeniy Onegin");
         book1.setAuthor(pushkin);
-//        book1.setLibrary(lib1);
-//        book1.setClient(client1);
+        book1.setLibrary(lib1);
+        book1.setClient(client1);
 
         Book book2 = new Book();
         book2.setTitle("Lukomorye");
         book2.setAuthor(pushkin);
-//        book2.setLibrary(lib2);
+        book2.setLibrary(lib2);
 
         Book book3 = new Book();
         book3.setTitle("Dead souls");
         book3.setAuthor(gogol);
-//        book3.setLibrary(lib1);
-//        book3.setClient(client2);
+        book3.setLibrary(lib1);
+        book3.setClient(client2);
 
         Book book4 = new Book();
         book4.setTitle("Peace and war");
         book4.setAuthor(tolstoy);
-//        book4.setLibrary(lib2);
+        book4.setLibrary(lib2);
 
         Book book5 = new Book();
         book5.setTitle("Anna Karenina");
         book5.setAuthor(tolstoy);
-//        book5.setLibrary(lib2);
-//        book5.setClient(client3);
+        book5.setLibrary(lib2);
+        book5.setClient(client3);
 
         Book book6 = new Book();
         book6.setTitle("Le Comte de Monte-Cristo");
         book6.setAuthor(dumas);
-//        book6.setLibrary(lib1);
+        book6.setLibrary(lib1);
 
         Book book7 = new Book();
         book7.setTitle("Les trois mousquetaires");
         book7.setAuthor(dumas);
-//        book7.setLibrary(lib2);
+        book7.setLibrary(lib2);
 
 //        client1.setLibraries(Set.of(lib1, lib2));
 //        client2.setLibraries(Set.of(lib1));
@@ -138,6 +138,13 @@ public class Bootstrap implements CommandLineRunner {
         authorService.save(tolstoy);
         authorService.save(dumas);
 
+        libraryService.save(lib1);
+        libraryService.save(lib2);
+
+        clientService.save(client1);
+        clientService.save(client2);
+        clientService.save(client3);
+
         bookService.save(book1);
         bookService.save(book2);
         bookService.save(book3);
@@ -145,6 +152,8 @@ public class Bootstrap implements CommandLineRunner {
         bookService.save(book5);
         bookService.save(book6);
         bookService.save(book7);
+
+
 
     }
 }

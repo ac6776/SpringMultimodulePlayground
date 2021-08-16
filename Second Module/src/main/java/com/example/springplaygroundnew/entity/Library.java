@@ -1,5 +1,6 @@
 package com.example.springplaygroundnew.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -12,8 +13,12 @@ import java.util.Set;
 @Data
 public class Library extends BaseEntity {
     private String title;
+
+    @JsonIgnore
     @ManyToMany(mappedBy = "libraries")
     private Set<Client> clients;
-    @OneToMany(fetch = FetchType.EAGER)
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "library")
     private Set<Book> books;
 }

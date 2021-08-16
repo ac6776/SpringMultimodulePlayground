@@ -12,12 +12,15 @@ public class Book extends BaseEntity {
 
 //    @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "id")
+//    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
-//    @ManyToOne
-//    //todo check for column name
-//    private Client client;
-//    @ManyToOne
+
+    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Client client;
+
+    @ManyToOne
+//    @ManyToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "library_id", referencedColumnName = "id")
-//    private Library library;
+    private Library library;
 }

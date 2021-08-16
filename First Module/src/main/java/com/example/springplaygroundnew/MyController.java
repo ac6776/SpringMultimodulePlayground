@@ -1,8 +1,6 @@
 package com.example.springplaygroundnew;
 
-import com.example.springplaygroundnew.entity.Author;
-import com.example.springplaygroundnew.entity.BaseEntity;
-import com.example.springplaygroundnew.entity.Book;
+import com.example.springplaygroundnew.entity.*;
 import com.example.springplaygroundnew.repo.SimpleStringRepo;
 import com.example.springplaygroundnew.services.AuthorService;
 import com.example.springplaygroundnew.services.BookService;
@@ -71,5 +69,15 @@ public class MyController {
             return "There is no such book";
         }
         return bookFromDb.getTitle() + " Author: " + bookFromDb.getAuthor().getFirstName() + " " + bookFromDb.getAuthor().getLastName();
+    }
+
+    @GetMapping("/clients")
+    public List<Client> clients() {
+        return clientService.findAll();
+    }
+
+    @GetMapping("/libraries")
+    public List<Library> libraries() {
+        return libraryService.findAll();
     }
 }
