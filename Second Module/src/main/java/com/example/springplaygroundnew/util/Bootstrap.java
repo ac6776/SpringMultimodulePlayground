@@ -12,8 +12,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Component
@@ -64,6 +62,7 @@ public class Bootstrap implements CommandLineRunner {
         client3.setFirstName("Natalya");
         client3.setLastName("Oreiro");
 
+
         //Books
         Book book1 = new Book();
         book1.setTitle("Evgeniy Onegin");
@@ -103,36 +102,11 @@ public class Bootstrap implements CommandLineRunner {
         book7.setAuthor(dumas);
         book7.setLibrary(lib2);
 
-//        client1.setLibraries(Set.of(lib1, lib2));
-//        client2.setLibraries(Set.of(lib1));
-//        client3.setLibraries(Set.of(lib2));
-//
-//        //todo author.setBooks()
-//        List<Book> pBooks = new ArrayList<>();
-//        pBooks.add(book1);
-//        pBooks.add(book2);
-//        pushkin.setBooks(pBooks);
-//        gogol.setBooks(List.of(book3));
-//        tolstoy.setBooks(Set.of(book4, book5));
-//        dumas.setBooks(Set.of(book6, book7));
-//        //todo library.setBooks()
-//        lib1.setBooks(Set.of(book1, book3, book6));
-//        lib2.setBooks(Set.of(book2, book4, book5, book7));
-//        //todo library.setClients()
-//        lib1.setClients(Set.of(client1, client2));
-//        lib2.setClients(Set.of(client1, client3));
-//        //todo client.setBooks()
-//        client1.setBooks(Set.of(book1));
-//        client2.setBooks(Set.of(book3));
-//        client3.setBooks(Set.of(book5));
-//
-//        libraryService.save(lib1);
-//        libraryService.save(lib2);
+        client1.setLibraries(Set.of(lib1, lib2));
+        client2.setLibraries(Set.of(lib1));
+        client3.setLibraries(Set.of(lib2));
 
-//        clientService.save(client1);
-//        clientService.save(client2);
-//        clientService.save(client3);
-
+        //save to DB
         authorService.save(pushkin);
         authorService.save(gogol);
         authorService.save(tolstoy);
@@ -152,8 +126,5 @@ public class Bootstrap implements CommandLineRunner {
         bookService.save(book5);
         bookService.save(book6);
         bookService.save(book7);
-
-
-
     }
 }

@@ -1,9 +1,9 @@
 package com.example.springplaygroundnew.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data
@@ -12,7 +12,6 @@ public class Book extends BaseEntity {
 
 //    @JsonIgnore
     @ManyToOne
-//    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
 
     @ManyToOne
@@ -21,6 +20,5 @@ public class Book extends BaseEntity {
 
     @ManyToOne
 //    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "library_id", referencedColumnName = "id")
     private Library library;
 }

@@ -12,8 +12,6 @@ import java.util.List;
 @Data
 public class Author extends BasePerson {
     @JsonIgnore
-//    @OneToMany
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-//    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private List<Book> books;
 }
